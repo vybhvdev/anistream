@@ -1,82 +1,144 @@
-/* SHONEN THEME DEFINITION */
+/* SHONEN THEME - MOBILE OPTIMIZED */
 :root {
     --primary: #e62429;      
     --accent: #ffcc00;       
     --bg: #0a0a0a;           
     --card-bg: #161616;
     --text-main: #ffffff;
-    --text-muted: #aaaaaa;
     --font-header: 'Bebas Neue', cursive;
-    --font-body: 'Nunito', sans-serif;
 }
 
 body {
     background-color: var(--bg);
     color: var(--text-main);
-    font-family: var(--font-body);
     margin: 0;
-    transition: background 0.3s ease;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden; /* Prevents side-scrolling */
 }
 
 /* Navigation */
 .navbar {
     background: var(--bg);
-    border-bottom: 4px solid var(--primary);
-    padding: 15px 5%;
+    border-bottom: 3px solid var(--primary);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .logo-text {
     font-family: var(--font-header);
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     color: var(--primary);
-    text-transform: uppercase;
 }
 
-/* Hero Section */
+/* Hero Section Fix */
 .hero {
-    border-bottom: 8px solid var(--primary);
+    position: relative;
+    height: 50vh; /* Shorter for mobile */
+    min-height: 350px;
     background: #000;
+    border-bottom: 5px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
 }
 
 .hero-title {
     font-family: var(--font-header);
-    font-size: 4rem;
+    font-size: 2.5rem; /* Smaller for mobile */
     color: var(--accent);
-    text-shadow: 3px 3px 0px var(--primary);
+    text-shadow: 2px 2px 0px var(--primary);
+    margin-bottom: 10px;
 }
 
-/* Manga Style Buttons */
-.btn-primary {
-    background: var(--primary);
-    border: none;
-    font-family: var(--font-header);
-    color: white;
-    box-shadow: 4px 4px 0px var(--accent);
-    padding: 12px 25px;
-    cursor: pointer;
+.hero-desc {
+    font-size: 0.9rem;
+    color: #ccc;
+    max-width: 100%;
+    margin-bottom: 15px;
 }
 
-/* Card Styling */
-.anime-card, .skeleton-card {
+/* THE MAGIC GRID FIX */
+.anime-grid {
+    display: grid;
+    /* Force 2 columns on mobile, auto-fill on desktop */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px;
+    padding: 15px;
+}
+
+@media (min-width: 768px) {
+    .anime-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+.anime-card {
     background: var(--card-bg);
-    border: 2px solid #333;
-    transition: 0.3s;
+    border: 2px solid #222;
+    border-radius: 4px;
+    transition: 0.2s;
+    height: 100%;
 }
 
-.anime-card:hover {
-    border-color: var(--accent);
-    transform: scale(1.02) rotate(-1deg);
+.anime-card img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    display: block;
+}
+
+.anime-info {
+    padding: 8px;
+}
+
+.anime-info h3 {
+    font-size: 0.85rem;
+    margin: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Section Headers */
+.section-header {
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .section-title {
     font-family: var(--font-header);
-    font-size: 2.5rem;
-    border-left: 10px solid var(--primary);
-    padding-left: 15px;
+    font-size: 1.8rem;
+    margin: 0;
 }
 
 .live-badge {
     background: var(--primary);
-    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
-    padding: 5px 15px;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    font-weight: bold;
+}
+
+/* Categories Scroll */
+.categories-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 15px;
+}
+
+.category-btn {
+    background: #222;
+    border: none;
+    color: white;
+    padding: 6px 15px;
+    margin-right: 8px;
+    font-family: var(--font-header);
+    border-radius: 4px;
 }
