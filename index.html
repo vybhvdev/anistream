@@ -1,0 +1,104 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">  
+  <title>Animyx | Shonen Edition</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="css/styles.css">  
+</head>  
+<body class="theme-shonen">  
+  <nav class="navbar" id="navbar">  
+    <a href="#" class="logo"><span class="logo-icon">🎌</span><span class="logo-text">Animyx</span></a>  
+    <ul class="nav-links" id="navLinks">  
+      <li><a href="#trending" class="nav-link">Trending</a></li>  
+      <li><a href="#new-releases" class="nav-link">Top Rated</a></li>  
+      <li><a href="#genres" class="nav-link">Genres</a></li>  
+    </ul>  
+    <div class="nav-right">  
+      <button class="search-toggle" id="searchToggle">🔍</button>  
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>  
+    </div>  
+  </nav>  
+  <div class="search-overlay" id="searchOverlay">  
+    <div class="search-inner">  
+      <div class="search-box"><input type="text" id="searchInput" placeholder="Search anime..."><button id="searchClear">✕</button></div>  
+      <div id="searchResults" class="search-results"></div>  
+    </div>  
+  </div>  
+  <section class="hero" id="home">  
+    <div class="hero-bg" id="heroBg"></div>  
+    <div class="hero-overlay"></div>  
+    <div class="hero-content">  
+      <div class="hero-badge">🔥 Trending</div>  
+      <h1 class="hero-title" id="heroTitle">Loading...</h1>  
+      <p class="hero-desc" id="heroDesc"></p>  
+      <div class="hero-meta" id="heroMeta"></div>  
+      <div class="hero-buttons">  
+        <button class="btn btn-primary" id="heroWatchBtn">▶ Watch Now</button>  
+        <button class="btn btn-secondary" id="heroInfoBtn">ℹ More Info</button>  
+      </div>  
+    </div>  
+  </section>  
+  <section class="section">  
+    <div class="categories-scroll">  
+      <div class="categories" id="categories">  
+        <button class="category-btn active" data-genre="all">All</button>  
+        <button class="category-btn" data-genre="Action">Action</button>  
+        <button class="category-btn" data-genre="Adventure">Adventure</button>  
+        <button class="category-btn" data-genre="Comedy">Comedy</button>  
+        <button class="category-btn" data-genre="Drama">Drama</button>  
+        <button class="category-btn" data-genre="Fantasy">Fantasy</button>  
+        <button class="category-btn" data-genre="Horror">Horror</button>  
+        <button class="category-btn" data-genre="Romance">Romance</button>  
+        <button class="category-btn" data-genre="Sci-Fi">Sci-Fi</button>  
+      </div>  
+    </div>  
+  </section>  
+  <section class="section" id="trending">  
+    <div class="section-header"><h2 class="section-title">Trending Now</h2><span class="live-badge">LIVE</span></div>  
+    <div class="anime-grid" id="trendingGrid">  
+      <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>  
+      <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>  
+    </div>  
+  </section>  
+  <section class="section" id="new-releases">  
+    <div class="section-header"><h2 class="section-title">Top Rated</h2></div>  
+    <div class="anime-grid" id="topRatedGrid">  
+      <div class="skeleton-card"></div><div class="skeleton-card"></div>  
+      <div class="skeleton-card"></div><div class="skeleton-card"></div>  
+    </div>  
+  </section>  
+  <section class="section" id="upcoming-section">  
+    <div class="section-header"><h2 class="section-title">Upcoming</h2></div>  
+    <div class="anime-horizontal" id="upcomingGrid">  
+      <div class="skeleton-card-h"></div><div class="skeleton-card-h"></div><div class="skeleton-card-h"></div>  
+    </div>  
+  </section>  
+  <section class="section" id="genres">  
+    <div class="section-header"><h2 class="section-title">Browse by Genre</h2></div>  
+    <div class="genre-grid">  
+      <div class="genre-card" data-genre="Action" style="--g1:#ff4d4d;--g2:#cc0000;">⚔️<span>Action</span></div>  
+      <div class="genre-card" data-genre="Romance" style="--g1:#ff6eb4;--g2:#d63384;">💕<span>Romance</span></div>  
+      <div class="genre-card" data-genre="Adventure" style="--g1:#4facfe;--g2:#0076ff;">🗺️<span>Adventure</span></div>  
+      <div class="genre-card" data-genre="Comedy" style="--g1:#ffd93d;--g2:#ff922b;">😂<span>Comedy</span></div>  
+      <div class="genre-card" data-genre="Horror" style="--g1:#6c0000;--g2:#1a0000;">👻<span>Horror</span></div>  
+      <div class="genre-card" data-genre="Fantasy" style="--g1:#a18cd1;--g2:#764ba2;">🧙<span>Fantasy</span></div>  
+      <div class="genre-card" data-genre="Sci-Fi" style="--g1:#0f3460;--g2:#533483;">🚀<span>Sci-Fi</span></div>  
+      <div class="genre-card" data-genre="Slice of Life" style="--g1:#a8edea;--g2:#fed6e3;">🌸<span>Slice of Life</span></div>  
+    </div>  
+  </section>  
+  <div class="modal-overlay" id="animeModal">  
+    <div class="modal-content">  
+      <button class="modal-close" id="modalClose">✕</button>  
+      <div class="modal-hero"><img id="modalImage" src="" alt=""><div class="modal-hero-overlay"></div><div class="modal-hero-info"><h2 id="modalTitle"></h2><div id="modalMeta" class="modal-meta"></div></div></div>  
+      <div class="modal-body" id="modalBody">  
+        <div class="modal-genres" id="modalGenres"></div>  
+        <p id="modalDesc" class="modal-desc"></p>  
+        <button id="modalWatchLink" class="btn btn-primary">▶ Watch Now</button>  
+      </div>  
+    </div>  
+  </div>  
+  <footer class="footer"><p>🎌 Animyx — Powered by <a href="https://jikan.moe" target="_blank">Jikan</a> & <a href="https://hianime.to" target="_blank">HiAnime</a></p></footer>  
+  <script src="js/main.js"></script>  
+</body>  
+</html>
